@@ -2,9 +2,7 @@
 
 This repository contains a complete Level C systems-software course project: a one-input assembler, an architecture-independent linker, and an interpretive emulator for the specified 32-bit abstract computer.
 
-The maintained solution is in `C:\dev\ssGithub\SS-Projekat\project\resenje`.
-
-> **Naming note:** implementation file names intentionally use the Serbian spelling `asembler` (for example, `src\asembler.cpp`). The built executable is **`assembler`**, with two `s` characters, because that is the name used by the official defense scripts and the recorded project ruling.
+> **Naming note:** implementation file names use the Serbian spelling `asembler` (for example, `src/asembler.cpp`). The built executable is named `assembler`.
 
 ## Contents
 
@@ -19,39 +17,19 @@ The maintained solution is in `C:\dev\ssGithub\SS-Projekat\project\resenje`.
 - [Emulator behavior](#emulator-behavior)
 - [Errors and output safety](#errors-and-output-safety)
 - [Source-level API and implementation guide](#source-level-api-and-implementation-guide)
-- [Official defense tests](#official-defense-tests)
-- [Specification interpretations](#specification-interpretations)
+- [Supported scope](#supported-scope)
 
 ## Repository layout
 
-Paths in this section are Windows paths, matching the checkout.
-
 | Path | Purpose |
 |---|---|
-| `C:\dev\ssGithub\SS-Projekat\project\resenje` | Maintained implementation and the directory from which the tools are built and tested. |
-| `...\project\resenje\inc` | Public C++ declarations for the assembler, linker, object model, and emulator. |
-| `...\project\resenje\src` | Hand-written C++ implementation, shared file-safety utilities, POSIX device adapter, and the three CLI entry points. |
-| `...\project\resenje\misc` | Flex lexer and Bison parser inputs. Generated files belong in `build`, not in a submission archive. |
-| `...\project\resenje\makefile` | C++17 build graph, flex/bison generation, dependency tracking, and cleanup. |
-| `...\project\resenje\build` | Generated lexer/parser files, dependency files, and compiler object files. It is disposable build output. |
-| `...\project\resenje\assembler`, `linker`, `emulator` | Locally built executables. They are build artifacts and are not part of the required submission contents. |
-| `...\project\shared memory` | Append-only project record containing requirements analysis, design decisions, ownership history, implementation checkpoints, and validation results. |
-| `...\01-ss-2025-2026-projekat-postavka-v1.0_organized.pdf` | Official project specification. |
-| `...\v02-make.pdf` | Lecture material on GNU Make. |
-| `...\v03a-konstrukcija-asemblera.pdf` | Lecture material on assembler construction, forward references, symbol tables, and literal pools. |
-| `...\v03b-elf.pdf` | ELF concepts used as the model for sections, symbols, and RELA relocations. |
-| `...\v04-emulatori.pdf` | Emulator design material. |
-| `...\v05-makro-procesori.pdf` | Macro-processor lecture material; useful background, but macro expansion is not a project requirement and is not implemented. |
-| `...\v06-linkeri.pdf` | Linker algorithms, symbol resolution, relocation, and section mapping. |
-| `...\v02-make` | Progressive makefile examples accompanying the Make lecture. |
-| `...\01-ss-2025-2026-projekat-odbrana-testovi\01-ss-2025-2026-projekat-odbrana-testovi` | Official Level A/B/C defense sources and launch scripts. The repeated directory name is intentional in the supplied archive. |
-| `...\bee3\doc-review` and `...\bee4\pdf-text` | Historical working copies of text extracted from the PDFs for review/search. They are evidence and research artifacts, not runtime dependencies. |
-| `...\bee1` | Historical independent review and adversarial reproduction fixtures. The currently modified implementation includes fixes for the confirmed findings recorded there. |
-| `...\vodic-1.txt` | Informal project guide. The official PDF and supplied defense programs remain authoritative where historical notes conflict. |
-
-The maintained solution directory contains `makefile`, `misc`, `inc`, and
-`src`. Executables, `build`, generated flex/bison files, PDFs, defense tests,
-and bee workspaces must not be included in the submitted solution archive.
+| `inc/` | Public C++ declarations for the assembler, linker, object model, and emulator. |
+| `src/` | Hand-written C++ implementation, shared file utilities, POSIX device adapter, and CLI entry points. |
+| `misc/` | Flex lexer and Bison parser sources. |
+| `tests/` | Assembly programs and scripts for exercising the complete toolchain. |
+| `makefile` | C++17 build graph, Flex/Bison generation, dependency tracking, and cleanup. |
+| `build/` | Generated lexer/parser files, dependency files, and object files. This directory is disposable. |
+| `assembler`, `linker`, `emulator` | Executables produced by the build. |
 
 ## Architecture and end-to-end flow
 
@@ -156,35 +134,35 @@ meeting the requirement to use Flex and Bison.
 
 ## Build under WSL/Linux
 
-The binding target is Linux/amd64. From the repository root in WSL or another Debian/Ubuntu-like Linux environment:
+The target platform is Linux/amd64. From the project directory in WSL or another Debian/Ubuntu-like Linux environment:
 
 ```bash
 sudo apt update
-sudo apt install -y build-essential flex bison python3 gawk
+sudo apt install -y build-essential flex bison
 
-make -C project/resenje clean
-make -C project/resenje -j"$(nproc)"
+make clean
+make -j"$(nproc)"
 ```
 
 Build one tool:
 
 ```bash
-make -C project/resenje assembler
-make -C project/resenje linker
-make -C project/resenje emulator
+make assembler
+make linker
+make emulator
 ```
 
 Clean generated files and executables:
 
 ```bash
-make -C project/resenje clean
+make clean
 ```
 
 The makefile uses `g++`, C++17, `-Wall -Wextra -O2`, generated dependency files, and build-local flex/bison outputs.
 
 ## Command-line tools
 
-Examples below start at the repository root.
+Examples below are run from the project directory.
 
 ### Assembler
 
@@ -194,7 +172,6 @@ assembler <input-file> -o <output-file>
 ```
 
 ```bash
-cd project/resenje
 ./assembler -o program.o program.s
 ```
 
@@ -214,8 +191,6 @@ linker [options] <input-file>...
 Exactly one of `-hex` and `-relocatable` is required.
 
 ```bash
-cd project/resenje
-
 ./linker -hex \
   -place=text@0x40000000 \
   -o program.hex program.o
@@ -233,14 +208,12 @@ emulator <hex-image>
 ```
 
 ```bash
-cd project/resenje
 ./emulator program.hex
 ```
 
 ### Complete example
 
 ```bash
-cd project/resenje
 ./assembler -o e2e.o program.s
 ./linker -hex -place=text@0x40000000 -o e2e.hex e2e.o
 ./emulator e2e.hex
@@ -709,31 +682,18 @@ Important internal records are `Linear` (constant plus symbolic coefficients), `
 - `src\emulator_main.cpp`: loads one image, creates host devices, runs to halt, and prints the state report.
 - `misc\asembler_lexer.l`: reentrant lexer for whitespace, `#` comments, newlines, directives, registers, CSRs, decimal/hex numbers, strings, words, and punctuation. It enters a discard state after `.end`; unknown characters before then become `INVALID`.
 - `misc\asembler_parser.y`: pure parser that validates physical source framing: empty lines, optional leading labels, one statement per line, and legal token sequences. Detailed operand meaning remains in the semantic C++ core.
-- `build\asembler_parser.*` and `build\asembler_lexer.*`: generated by Bison/Flex. They are intentionally not source-controlled submission inputs.
+- `build\asembler_parser.*` and `build\asembler_lexer.*`: generated by Bison/Flex and recreated by the build.
 
-## Official defense tests
+## Supported scope
 
-The separate official defense tree contains:
+The implementation provides the complete Level C feature set:
 
-- **Level A:** six units exercising global/extern linkage, software interrupts, stack calls, arithmetic routines, cross-file data, two explicit placements, final linking, and emulation.
-- **Level B:** terminal-driven counting and `.ascii` output.
-- **Level C:** terminal/timer interaction, MMIO constants via `.equ`, and same-section difference expressions.
-
-The tool paths at the top of each supplied `start.sh` must point to the three
-built executables. The scripts use CRLF line endings in this checkout, so copy
-or save them with LF endings before running them in the Linux defense VM.
-
-## Specification interpretations
-
-The implementation follows the official PDF specification. Historical decisions in `project\shared memory` remain useful design context, but the PDF and its supplied defense programs take precedence where they disagree:
-
-- Target the complete Level C feature set.
-- Build and defend on Linux/amd64 with `g++` and C++17.
-- Use the executable name `assembler`, despite source files named `asembler` and the spelling in parts of the Serbian specification.
+- Target Linux/amd64 with `g++` and C++17.
+- Use the executable name `assembler`, while source files use `asembler`.
 - Use flex and bison for source framing/lexical validation.
 - Use one textual object format only, with RELA-style explicit addends.
 - Resolve every `.equ` during assembly; represent exported absolute values with `ABS`.
-- Emit an undefined `.global` as `GLOB UND`, matching the supplied Level B/C programs; `.extern` remains the explicit import directive.
+- Emit an undefined `.global` as `GLOB UND`; `.extern` remains the explicit import directive.
 - Reject a used symbol that is neither defined nor declared through `.global` or `.extern`.
 - Emit reusable section-relative `-relocatable` output.
 - Ignore `-place` in relocatable mode.
@@ -745,5 +705,3 @@ The implementation follows the official PDF specification. Historical decisions 
 - Treat division edge cases and reserved encodings as invalid instructions.
 - Support unaligned little-endian words and zero-filled sparse memory.
 - Insert no implicit linker alignment.
-
-These choices are deliberate specification-compatibility rules, not accidental omissions.

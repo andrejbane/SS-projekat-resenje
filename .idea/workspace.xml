@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="resenje" targetName="all" />
+      <config projectName="resenje" targetName="emulator" />
+      <config projectName="resenje" targetName="linker" />
+      <config projectName="resenje" targetName="assembler" />
+      <config projectName="resenje" targetName="build" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1300fb71-58b1-452f-a2f1-348b868265c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/inc/asembler.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/inc/asembler.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/asembler_frontend.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/inc/asembler_frontend.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/emulator.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/inc/emulator.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/linker.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/inc/linker.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/object.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/inc/object.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/asembler_lexer.l" beforeDir="false" afterPath="$PROJECT_DIR$/misc/asembler_lexer.l" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/asembler_parser.y" beforeDir="false" afterPath="$PROJECT_DIR$/misc/asembler_parser.y" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asembler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/asembler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asembler_frontend.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/asembler_frontend.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asembler_main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/asembler_main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/emulator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/emulator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/emulator_main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/emulator_main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/linker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/linker.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/linker_main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/linker_main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/a.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_absolute_displacement.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_bad_cycle.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_bad_displacement.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_bad_expression.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_bad_global.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_bad_undeclared.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_branches.expected" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_branches.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_encoding.expected" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_encoding.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_pool_range.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/assembler_smoke.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/b.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/bad_hex.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/bad_reloc_type.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/bad_short_section.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/bad_symbol_index.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/dup_main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/emulator_arithmetic.hex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/emulator_bad_byte.hex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/emulator_e2e.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/emulator_overflow.hex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/emulator_overlap.hex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/emulator_terminal.hex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/emulator_unit_tests.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/run_assembler_tests.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/run_emulator_host_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/run_emulator_tests.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/run_link_fixture_tests.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/run_tests.sh" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MakefileLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="resenje" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="resenje" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="1.6" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3Iun6wHIUT7s4Sf4GxOiJd2L9lL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/ssGithub/SS-Projekat/project/resenje&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Native Application.all">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="all" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="resenje" TARGET_NAME="all" CONFIG_NAME="all" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="assembler" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="resenje" TARGET_NAME="assembler" CONFIG_NAME="assembler" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="build" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="resenje" TARGET_NAME="build" CONFIG_NAME="build" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="emulator" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="resenje" TARGET_NAME="emulator" CONFIG_NAME="emulator" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="linker" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="resenje" TARGET_NAME="linker" CONFIG_NAME="linker" version="1">
+      <method v="2">
+        <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Native Application.all" />
+      <item itemvalue="Native Application.assembler" />
+      <item itemvalue="Native Application.build" />
+      <item itemvalue="Native Application.emulator" />
+      <item itemvalue="Native Application.linker" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1300fb71-58b1-452f-a2f1-348b868265c6" name="Changes" comment="" />
+      <created>1788623150159</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788623150159</updated>
+      <workItem from="1788623151570" duration="15841000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,20 @@
+make clean
+
+make assembler
+
+make linker
+
+make emulator
+
+cd ~/Desktop/resenje
+
+ROOT="$HOME/Desktop/resenje"
+
+for level in nivo-a nivo-b nivo-c; do
+    script="tests/$level/start.sh"
+    sed -i 's/\r$//' "$script"
+    sed -i "s|^ASSEMBLER=.*|ASSEMBLER=$ROOT/assembler|" "$script"
+    sed -i "s|^LINKER=.*|LINKER=$ROOT/linker|" "$script"
+    sed -i "s|^EMULATOR=.*|EMULATOR=$ROOT/emulator|" "$script"
+    chmod +x "$script"
+done
